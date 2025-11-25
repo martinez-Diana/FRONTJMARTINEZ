@@ -1,0 +1,15 @@
+{
+  "build": {
+    "builder": "NIXPACKS",
+    "nixpacks": {
+      "phases": {
+        "install": {
+          "cmds": ["pnpm install --no-frozen-lockfile"]
+        },
+        "build": {
+          "cmds": ["pnpm run build"]
+        }
+      }
+    }
+  }
+}

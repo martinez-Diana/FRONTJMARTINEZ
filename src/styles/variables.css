@@ -1,0 +1,34 @@
+:root {
+  /* Colores primarios */
+  --rosa-principal: #F93B9A;
+  --gris-claro: #F5F6FA;
+  --texto-principal: #333333;
+
+  /* Colores secundarios */
+  --rosa-suave: #FDAFD2;
+  --morado-claro: #C88CFF;
+  --texto-secundario: #666666;
+  --borde: #E0E0E0;
+
+  /* Colores de acento */
+  --amarillo-acento: #FFC300;
+  --azul-vibrante: #00B7FF;
+  --verde-confirmacion: #27AE60;
+
+  /* Colores de estado */
+  --exito: #2ECC71;
+  --error: #E74C3C;
+  --advertencia: #F39C12;
+  --informacion: #3498DB;
+
+  /* Tipografía */
+  --fuente-encabezado: "Poppins", sans-serif;
+  --fuente-texto: "Roboto", sans-serif;
+
+  /* Tamaños de texto */
+  --size-encabezado: 32px;
+  --size-subtitulo: 24px;
+  --size-texto: 16px;
+  --size-boton: 14px;
+  --size-nota: 12px;
+}

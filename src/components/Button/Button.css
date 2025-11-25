@@ -1,0 +1,42 @@
+@import '../../styles/variables.css';
+
+.btn {
+  padding: 10px 18px;
+  font-size: var(--size-boton);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: var(--fuente-texto);
+  font-weight: 500;
+}
+
+/* Botón principal */
+.btn.primary {
+  background-color: var(--rosa-principal);
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: var(--rosa-suave);
+}
+
+/* Botón secundario */
+.btn.secondary {
+  background-color: var(--morado-claro);
+  color: white;
+}
+
+.btn.secondary:hover {
+  background-color: var(--azul-vibrante);
+}
+
+/* Botón de acento (por ejemplo, amarillo o confirmación) */
+.btn.accent {
+  background-color: var(--amarillo-acento);
+  color: var(--texto-principal);
+}
+
+.btn.accent:hover {
+  filter: brightness(1.1);
+}

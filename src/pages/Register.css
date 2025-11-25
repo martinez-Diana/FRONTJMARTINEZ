@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #f8fbff, #fffde7);
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-box {
+  display: flex;
+  background: #fff;
+  width: 900px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Panel izquierdo */
+.register-left {
+  background-color: #e91e63;
+  color: white;
+  flex: 1;
+  padding: 60px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-left h1 {
+  font-size: 24px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.register-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffeb3b;
+  margin-top: 10px;
+}
+
+.register-left p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.line {
+  width: 50px;
+  height: 3px;
+  background-color: #00bcd4;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+.circles {
+  margin-top: 30px;
+}
+
+.circle {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+.cyan {
+  background-color: #00bcd4;
+}
+
+.yellow {
+  background-color: #ffeb3b;
+}
+
+.orange {
+  background-color: #ff9800;
+}
+
+/* Panel derecho */
+.register-right {
+  flex: 1;
+  padding: 50px 60px;
+  background: #fff;
+}
+
+.register-right h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.register-right p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #e91e63;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-container input {
+  margin-right: 8px;
+}
+
+.register-btn {
+  background-color: #e91e63;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #d81b60;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link .highlight {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link .highlight:hover {
+  text-decoration: underline;
+}

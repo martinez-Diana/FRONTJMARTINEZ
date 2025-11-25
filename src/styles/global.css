@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+@import './variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--gris-claro);
+  color: var(--texto-principal);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-encabezado);
+  color: var(--texto-principal);
+}
+
+button {
+  font-family: var(--fuente-texto);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--azul-vibrante);
+}
+
+a:hover {
+  color: var(--rosa-principal);
+}
