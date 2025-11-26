@@ -1,7 +1,9 @@
+// src/api.js
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://backjmartinez-production.up.railway.app/",
+  baseURL: import.meta.env.VITE_API_URL,
+  withCredentials: true,
 });
 
 export default API;
