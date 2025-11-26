@@ -7,6 +7,7 @@ import Administrador from "./pages/Administrador";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import CatalogoProductos from "./pages/Catalogo_Productos";
+import AuthSuccess from "./pages/AuthSuccess";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Administrador />} />
+        
+        {/* 👇 Ruta de autenticación exitosa */}
+        <Route path="/auth/success" element={<AuthSuccess />} />
         
         {/* 👇 Rutas de recuperación de contraseña */}
         <Route path="/forgot-password" element={<ForgotPassword />} />
