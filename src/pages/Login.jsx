@@ -18,6 +18,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [codeSent, setCodeSent] = useState(false);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -33,9 +34,9 @@ const Login = () => {
     else navigate("/home");
   };
 
-  // ------------------------
+  // -------------------------------
   // LOGIN TRADICIONAL
-  // ------------------------
+  // -------------------------------
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -54,7 +55,6 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(data.user));
 
       setMessage("¡Inicio de sesión exitoso!");
-
       setTimeout(() => redirectByRole(data.user), 1500);
     } catch (err) {
       setError(err.response?.data?.error || "Error al iniciar sesión");
@@ -63,9 +63,9 @@ const Login = () => {
     }
   };
 
-  // ------------------------
+  // -------------------------------
   // SOLICITAR CÓDIGO EMAIL
-  // ------------------------
+  // -------------------------------
   const handleRequestCode = async (e) => {
     e.preventDefault();
     setError("");
@@ -86,9 +86,9 @@ const Login = () => {
     }
   };
 
-  // ------------------------
+  // -------------------------------
   // VERIFICAR CÓDIGO EMAIL
-  // ------------------------
+  // -------------------------------
   const handleVerifyCode = async (e) => {
     e.preventDefault();
     setError("");
@@ -107,7 +107,6 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(data.user));
 
       setMessage("¡Código verificado!");
-
       setTimeout(() => redirectByRole(data.user), 1500);
     } catch (err) {
       setError(err.response?.data?.error || "Código inválido");
@@ -116,13 +115,13 @@ const Login = () => {
     }
   };
 
-  // ------------------------
-  // LOGIN GOOGLE
-  // ------------------------
+  // -------------------------------
+  // LOGIN CON GOOGLE
+  // -------------------------------
   const handleGoogleSuccess = async (credentialResponse) => {
+    setLoading(true);
     setError("");
     setMessage("");
-    setLoading(true);
 
     try {
       const response = await API.post("/api/auth/google", {
@@ -138,27 +137,27 @@ const Login = () => {
 
       setTimeout(() => redirectByRole(data.user), 1500);
     } catch (err) {
-      setError(err.response?.data?.error || "Error al iniciar sesión con Google");
+      setError("Error al iniciar sesión con Google.");
     } finally {
       setLoading(false);
     }
   };
 
   const handleGoogleError = () => {
-    setError("Error al iniciar sesión con Google.");
+    setError("❌ Error al iniciar sesión con Google.");
   };
 
-  // ------------------------
+  // -------------------------------
   // ESTILOS (sin modificar)
-  // ------------------------
-  const styles = { /* … tus estilos exactamente igual … */ };
+  // -------------------------------
+  const styles = { /* tus estilos aquí sin cambios */ };
 
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
       <div style={styles.container}>
         <div style={styles.card}>
-
-          {/* PANEL IZQUIERDO */}
+          
+          {/* Panel izquierdo */}
           <div style={styles.leftPanel}>
             <h2 style={styles.leftTitle}>JUGUETERÍA Y</h2>
             <h1 style={styles.leftSubtitle}>MARTÍNEZ</h1>
@@ -166,12 +165,12 @@ const Login = () => {
             <p style={styles.leftDescription}>Sistema de Gestión Integral</p>
           </div>
 
-          {/* PANEL DERECHO */}
+          {/* Panel derecho */}
           <div style={styles.rightPanel}>
             <h2 style={styles.rightTitle}>Bienvenido</h2>
             <p style={styles.rightSubtitle}>Selecciona tu método de inicio de sesión</p>
 
-            {/* GOOGLE LOGIN */}
+            {/* BOTÓN GOOGLE */}
             <div style={styles.googleButtonContainer}>
               {GOOGLE_CLIENT_ID ? (
                 <GoogleLogin
@@ -179,9 +178,11 @@ const Login = () => {
                   onError={handleGoogleError}
                   theme="outline"
                   size="large"
+                  shape="rectangular"
+                  logo_alignment="left"
                 />
               ) : (
-                <p style={styles.error}>⚠ No se detectó GOOGLE_CLIENT_ID en .env</p>
+                <p style={styles.error}>⚠ No se encontró GOOGLE_CLIENT_ID en el .env</p>
               )}
             </div>
 
@@ -192,13 +193,10 @@ const Login = () => {
               <div style={styles.dividerLine}></div>
             </div>
 
-            {/* BOTONES DE MÉTODO */}
+            {/* MÉTODO DE LOGIN */}
             <div style={styles.methodButtons}>
               <button
-                onClick={() => {
-                  setLoginMethod("traditional");
-                  setCodeSent(false);
-                }}
+                onClick={() => setLoginMethod("traditional")}
                 style={{
                   ...styles.methodButton,
                   ...(loginMethod === "traditional" ? styles.methodButtonActive : {}),
@@ -224,7 +222,6 @@ const Login = () => {
             {/* FORMULARIOS */}
             {loginMethod === "traditional" && (
               <form onSubmit={handleLogin} style={styles.form}>
-
                 <label style={styles.label}>Usuario o Email</label>
                 <input
                   type="text"
@@ -292,7 +289,6 @@ const Login = () => {
               </form>
             )}
 
-            {/* MENSAJES */}
             {message && <p style={styles.message}>{message}</p>}
             {error && <p style={styles.error}>{error}</p>}
 
